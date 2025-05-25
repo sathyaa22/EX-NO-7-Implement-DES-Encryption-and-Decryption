@@ -73,4 +73,4 @@ int main()
 
 
 ## Result:
-  The program is executed successfully
+  The program is executed successfully.
