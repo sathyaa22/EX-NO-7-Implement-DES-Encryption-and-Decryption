@@ -16,26 +16,30 @@ To use the Data Encryption Standard (DES) algorithm for a practical application,
 ```
 #include <stdio.h>
 #include <string.h>
-void encrypt(char *message, char *key, char *encryptedMessage, int messageLength) {
+void encrypt(char *message, char *key, char *encryptedMessage, int messageLength) 
+{
     int keyLength = strlen(key);
-    for (int i = 0; i < messageLength; i++) {
+    for (int i = 0; i < messageLength; i++) 
+    {
         encryptedMessage[i] = message[i] ^ key[i % keyLength];
     }
     encryptedMessage[messageLength] = '\0';  
 }
-void decrypt(char *encryptedMessage, char *key, char *decryptedMessage, int messageLength) {
+void decrypt(char *encryptedMessage, char *key, char *decryptedMessage, int messageLength) 
+{
     int keyLength = strlen(key);
-
-    for (int i = 0; i < messageLength; i++) {
-       
+    for (int i = 0; i < messageLength; i++) 
+    {
         decryptedMessage[i] = encryptedMessage[i] ^ key[i % keyLength];
     }
     decryptedMessage[messageLength] = '\0'; 
 }
-int main() {
+
+int main() 
+{
     char message[100];
     char key[100];
-
+    
     printf("\n***** Simulation of XOR Encryption and Decryption *****\n\n");
     printf("Enter the message to encrypt: ");
     fgets(message, sizeof(message), stdin);
@@ -51,7 +55,8 @@ int main() {
     printf("Original Message: %s\n", message);
     printf("Encrypted Message: ");
     
-    for (int i = 0; i < messageLength; i++) {
+    for (int i = 0; i < messageLength; i++) 
+    {
         printf("%02X ", (unsigned char)encryptedMessage[i]);
     }
     printf("\n");
